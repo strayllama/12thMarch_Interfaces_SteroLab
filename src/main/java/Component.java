@@ -10,12 +10,14 @@ public abstract class Component {
     }
 
     public String getCurrentMedia() {
-        return currentMedia;
+        return this.currentMedia;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
+
+    public boolean isPlaying() {return this.playing;}
 
     public void load(String media) {
         if (currentMedia.equals("empty")) {
@@ -34,6 +36,8 @@ public abstract class Component {
         }
         else {return true;}
     }
+
+
 
     public String play() {
         if (this.isLoaded()) {
