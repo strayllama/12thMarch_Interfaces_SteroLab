@@ -1,6 +1,6 @@
 public interface INavigate {
-    void next();
-    void previous();
-    void manualForward();
-    void manualBackward();
+    String next();
+    String previous();
+    String manualForward();
+    String manualBackward();
 }

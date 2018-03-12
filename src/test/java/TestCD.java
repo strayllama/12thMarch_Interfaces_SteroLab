@@ -53,5 +53,54 @@ public class TestCD {
 
     }
 
+    @Test
+    public void canPause() {
+        cdPlayer.load("Sting's worst");
+        cdPlayer.play();
+        cdPlayer.pause();
+        assertEquals(false, cdPlayer.isPlaying());
+        assertEquals("Paused", cdPlayer.pause());
+    }
+
+    @Test
+    public void canSkipForwards() {
+        cdPlayer.load("Sting's worst");
+        assertEquals("Skipping to next track", cdPlayer.next());
+    }
+
+    @Test
+    public void cantSkipForwardsWhenNotLoaded() {
+        assertEquals("Not loaded", cdPlayer.next());
+    }
+
+    @Test
+    public void canSkipBackward() {
+        cdPlayer.load("Sting's worst");
+        assertEquals("Skipping to previous track", cdPlayer.previous());
+    }
+
+    @Test
+    public void canSkipForwardsManually() {
+        cdPlayer.load("Sting's worst");
+        cdPlayer.play();
+        assertEquals("Fast forwarding cd....", cdPlayer.manualForward());
+    }
+
+    @Test
+    public void cantSkipForwardsManuallyNotPlaying() {
+        assertEquals("Can't fast forward", cdPlayer.manualForward());
+    }
+
+    @Test
+    public void canSkipBackwardsManually() {
+        cdPlayer.load("Sting's worst");
+        cdPlayer.play();
+        assertEquals("Fast rewinding cd....", cdPlayer.manualBackward());
+    }
+
+    @Test
+    public void cantSkipBackwardsManually() {
+        assertEquals("Can't fast rewind", cdPlayer.manualBackward());
+    }
 
 }

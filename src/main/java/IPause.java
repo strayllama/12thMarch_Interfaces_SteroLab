@@ -1,3 +1,3 @@
 public interface IPause {
-    void pause();
+    String pause();
 }
