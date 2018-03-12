@@ -16,7 +16,6 @@ public class Radio implements INavigate {
     }
 
 
-
     @Override
     public String next() {
         return "Skipped to next station";
